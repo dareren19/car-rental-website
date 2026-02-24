@@ -3,18 +3,16 @@
 use App\Http\Controllers\AdminBookingController;
 use App\Http\Controllers\AdminCarController;
 use App\Http\Controllers\AdminController;
-
-
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
-
-
+use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
 
 // Home
 Route::get('/', [CarController::class, 'index'])->name('car.index');
+Route::get('/health', HealthCheckController::class);
 // users only routes
 Route::middleware(['auth', 'redirect.if.admin'])->group(function () {
     
