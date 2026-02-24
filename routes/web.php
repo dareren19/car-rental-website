@@ -7,12 +7,15 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\CarController;
 use App\Http\Controllers\HealthCheckController;
 use App\Http\Controllers\UserDashboardController;
+use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Support\Facades\Route;
 
 
 // Home
 Route::get('/', [CarController::class, 'index'])->name('car.index');
 Route::get('/health', HealthCheckController::class);
+Route::get('/debug', [App\Http\Controllers\DebugController::class, 'index']);
+Route::post('/debug-login', [App\Http\Controllers\DebugController::class, 'testLogin'])->withoutMiddleware([VerifyCsrfToken::class]);
 // users only routes
 Route::middleware(['auth', 'redirect.if.admin'])->group(function () {
     
