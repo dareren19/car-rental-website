@@ -1,12 +1,17 @@
+# nixpacks.toml
 [phases.setup]
-nixPkgs = ["php82", "php82Extensions.pdo", "php82Extensions.pdo_mysql", "php82Extensions.mbstring", "php82Extensions.xml", "php82Extensions.gd", "php82Extensions.curl"]
+nixPkgs = ["nodejs_20", "php82", "php82Extensions.pdo", "php82Extensions.pdo_mysql", "php82Extensions.mbstring", "php82Extensions.xml", "php82Extensions.gd", "php82Extensions.curl"]
 
 [phases.install]
-cmds = ["npm install -g npm@latest"]
+cmds = [
+  "node --version",
+  "npm --version",
+  "php --version"
+]
 
 [phases.build]
 cmds = [
-  "npm ci",
+  "npm ci || npm install",
   "npm run build",
   "php artisan optimize",
   "php artisan event:cache",
