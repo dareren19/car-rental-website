@@ -1,59 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚗 Car Rental Booking System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A full-featured Car Rental Booking System built with **Laravel 12**, **Laravel Breeze**, and **Tailwind CSS**.
 
-## About Laravel
+This system allows users to book cars and admins to manage bookings, cars, and users through a secure admin panel.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📌 Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👤 User Features
+- User registration & login (Laravel Breeze)
+- Book a car with start & end date
+- View all personal bookings in dashboard
+- Booking status tracking:
+  - Pending
+  - Approved
+  - Rejected
+  - Cancelled
+- Cancel booking (only if pending)
+- Booking summary statistics
+- Prevent double booking (date conflict validation)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 👑 Admin Features
+- Secure admin login
+- Role-based access (`is_admin = 1`)
+- Admin dashboard with:
+  - Total bookings
+  - Pending bookings
+  - Approved bookings
+  - Total users
+  - Total cars
+- View all bookings
+- Approve booking
+- Reject booking
+- View all users
+- View and manage cars
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## 🧠 System Flow
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🔹 Booking Process
+1. User selects car
+2. User submits booking
+3. Booking status = `pending`
+4. Admin reviews request
+5. Admin approves or rejects
+6. User sees updated status in dashboard
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 🔹 Double Booking Prevention
 
-## Contributing
+The system prevents overlapping bookings by checking:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Existing approved bookings for the same car
+- Overlapping date ranges
+- Conflict validation before saving
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🛠 Tech Stack
 
-## Security Vulnerabilities
+- PHP 8.2+
+- Laravel 12
+- Laravel Breeze (Authentication)
+- Tailwind CSS
+- MySQL
+- Vite
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## 🗂 Project Structure
+```
+app/
+├── Http/
+│ ├── Controllers/
+│ │ ├── BookingController.php
+│ │ ├── AdminController.php
+│ │ ├── AdminBookingController.php
+│ │ └── UserDashboardController.php
+│ └── Middleware/
+│ └── AdminMiddleware.php
+├── Models/
+│ ├── User.php
+│ ├── Car.php
+│ └── Booking.php
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+resources/views/
+├── admin/
+├── mainlayouts/
+├── dashboard.blade.php
+```
+📊 Dashboard Overview
+User Dashboard
+
+View bookings
+
+Cancel pending booking
+
+Booking statistics
+
+Admin Dashboard
+
+Manage all bookings
+
+Approve / Reject requests
+
+View system statistics
+
+🚀 Future Improvements
+
+Email notifications
+
+Booking calendar view
+
+Real-time notifications
+
+Payment integration
+
+Car availability calendar
+
+Advanced search & filtering
+
+API version
