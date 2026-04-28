@@ -94,35 +94,21 @@ resources/views/
 ├── mainlayouts/
 ├── dashboard.blade.php
 ```
-📊 Dashboard Overview
-User Dashboard
-
-View bookings
-
-Cancel pending booking
-
-Booking statistics
-
-Admin Dashboard
-
-Manage all bookings
-
-Approve / Reject requests
-
-View system statistics
-
-🚀 Future Improvements
-
-Email notifications
-
-Booking calendar view
-
-Real-time notifications
-
-Payment integration
-
-Car availability calendar
-
-Advanced search & filtering
-
-API version
+##📊 Dashboard Overview
+- User Dashboard
+- View bookings
+- Cancel pending booking
+- Booking statistics
+- Admin Dashboard
+- Manage all bookings
+- Approve / Reject requests
+- View system statistics
+  
+##🚀 Future Improvements
+- Email notifications
+- Booking calendar view
+- Real-time notifications
+- Payment integration
+- Car availability calendar
+- Advanced search & filtering
+- API version
