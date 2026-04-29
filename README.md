@@ -3,13 +3,13 @@
 A full-featured Car Rental Booking System built with **Laravel 12**, **Laravel Breeze**, and **Tailwind CSS**.
 
 This system allows users to book cars and admins to manage bookings, cars, and users through a secure admin panel.
-## [LIVE DEMO](https://independent-cyan-giraffe.148-163-121-30.cpanel.site)
+## ➡️ [LIVE DEMO](https://independent-cyan-giraffe.148-163-121-30.cpanel.site)
 ---
-###ADMINS
+##### ADMINS
 - superadmin@gmail.com || superadmin
 - admin@gmail.com || superadmin
 
-###USERS
+##### USERS
 - daren@yahoo.com || testuser
 - marc@yahoo.com || testuser
 - david@yahoo.com || testuser
